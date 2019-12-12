@@ -79,7 +79,7 @@ def classify(future,current):
         return 0
 
 
-data1= pd.read_csv('DataSet/BTTUSDT-formated.csv')
+data1= pd.read_csv('BTTUSDT-formated.csv')
 data1.drop(labels='Unnamed: 0',axis=1,inplace=True)
 data1['future']= data1['price'].shift(-FUTURE_PRIDICT)
 data1['target']=list(map(classify,data1['price'],data1['future']))
